@@ -3,8 +3,9 @@
  * Immutable: all operations return a new instance.
  */
 
-//  Export the Duration class to use it elsewhere
-export class Duration {
+//  TODO - You need to export your class to use it
+
+export default class Duration {
   /**
    * Total duration in seconds.
    * @type {number}
@@ -20,6 +21,7 @@ export class Duration {
      // YOUR CODE
      this._totalSeconds = seconds;
   }
+
   /**
    * Creates a new Duration from a number of minutes and seconds.
    * @param {number} [minutes=0] - The number of minutes.
@@ -28,7 +30,8 @@ export class Duration {
    */
   static fromMinutesAndSeconds(minutes = 0, seconds = 0) {
      // YOUR CODE
-     return new Duration(minutes * 60 + seconds);
+     const totalSeconds = minutes * 60 + seconds;
+     return new Duration(totalSeconds)
   }
 
   /**
@@ -37,27 +40,31 @@ export class Duration {
    * @returns {Duration} A new Duration representing the sum.
    */
   plus = (other) => {
-         
-         return new Duration(this._totalSeconds + other._totalSeconds);
+         // YOUR CODE
+      const newTotalSecond = this._totalSeconds + other._totalSeconds;
+      return new Duration(newTotalSecond);
   };
-  
+
+  // YOUR COMMENT
   /**
-   * Returns a new Duration by subtracting another duration.
-   * @param {Duration} other - Another duration to subtract.
-   * @returns {Duration} A new Duration representing the difference.
+   * Returns a new Duration by minus another duration.
+   * @param {Duration} other - Another duration to add.
+   * @returns {Duration} A new Duration representing the substraction.
    */
   minus = (other) => {
-         return new Duration(Math.max(0, this._totalSeconds - other._totalSeconds));
+         // YOUR CODE
+      const newTotalSecond = this._totalSeconds - other._totalSeconds;
+      return new Duration(newTotalSecond)
   };
-  
+
   /**
    * Converts the duration into a human-readable string, e.g., "2m 30s".
    * @returns {string} The formatted duration string.
    */
   toString = () => {
-        
-        const minutes = Math.floor(this._totalSeconds / 60);
-        const seconds = this._totalSeconds % 60;
-        return `${minutes}m ${seconds}s`;
+        // YOUR CODE
+      const minutes = Math.floor(this._totalSeconds / 60);
+      const seconds = this._totalSeconds % 60;
+      return `${minutes}m ${seconds}s`;
   };
 }

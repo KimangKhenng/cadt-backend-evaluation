@@ -14,4 +14,3 @@ raceResultService.saveToFile("./data/raceScores.json");
 
 // Write the total time for participant 1
 console.log(raceResultService.getTotalTimeForParticipant("participant1").toString());       // Expected : 4m 15s  
-

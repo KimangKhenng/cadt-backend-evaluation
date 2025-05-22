@@ -3,55 +3,44 @@ import { Duration } from "./Duration.js";
  * This class handle a single race time for a given particicpant and sport type
  */
 export class RaceResult {
-     /**
-      * Creates a new race result
-      * @param {string} participantId - The ID of the participant
-      * @param {string} sportType - The type of sport
-      * @param {Duration} duration - The duration of the race
-      */
-     constructor(participantId, sportType, duration) {
-          this.participantId = participantId;
-          this.sportType = sportType;
-          this.duration = duration;
-     }
+  // TODO
+  /**
+   * Particicpant's ID
+   * @type {string}
+   */
+  _participantId;
 
-     /**
-      * Gets the participant ID
-      * @return {string} The participant ID
-      */
-     getParticipantId() {
-          return this.participantId;
-     }
+  /**
+   * Type of sport
+   * @type {string}
+   */
+  _sportType;
 
-     /**
-      * Gets the sport type
-      * @return {string} The sport type
-      */
-     getSportType() {
-          return this.sportType;
-     }
+  /**
+   * Duration of race
+   * @type {Duration}
+   */
+  _duration;
 
-     /**
-      * Gets the duration
-      * @return {Duration} The duration
-      */
-     getDuration() {
-          return this.duration;
-     }
+  /**
+   * Create new race result
+   * @param {string} participantId - Participant's ID
+   * @param {string} sportType - Type of sport
+   * @param {Duration} duration - Duration of race
+   */
 
-     /**
-      * Sets a new duration
-      * @param {Duration} duration - The new duration
-      */
-     setDuration(duration) {
-          this.duration = duration;
-     }
+  constructor(participantId, sportType, duration) {
+    this._participantId = participantId;
+    this._sportType = sportType;
+    this._duration = duration;
+  }
 
-     /**
-      * Returns a string representation of the race result
-      * @return {string} String representation
-      */
-     toString() {
-          return `Participant: ${this.participantId}, Sport: ${this.sportType}, Time: ${this.duration.toString()}`;
-     }
+  toJSON() {
+    return {
+      participant_id: this._participantId,
+      sport: this._sportType,
+      time: this._duration.toString()
+    }
+  }
+
 }
