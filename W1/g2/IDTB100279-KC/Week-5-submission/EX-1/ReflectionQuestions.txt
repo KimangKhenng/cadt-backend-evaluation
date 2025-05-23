@@ -1,0 +1,22 @@
+1. Why is separating concerns (routes, controllers, models, middleware) important in backend development?
+Separating concerns improves code readability, maintainability, and scalability. It makes the code modular,
+where each part has a clear responsibility, making it easier to manage and test independently. This also 
+promotes reusability and enables efficient team collaboration.
+
+2. What challenges did you face when refactoring the monolithic server.js into multiple files?
+Challenges included:
+- Identifying and managing dependencies.
+- Deciding on a logical file structure.
+- Ensuring correct imports and exports.
+- Ensuring middleware is applied in the correct order.
+
+3. How does moving business logic into controllers improve the readability and testability of your code?
+Moving logic into controllers improves readability by separating concerns and keeps routes clean. 
+It also makes the code more testable by allowing logic to be tested independently from HTTP requests.
+
+4. If this project were to grow to support authentication, database interation, and logging, how would this folder structure help manage that growth?
+The structure keeps different concerns organized:
+- Authentication: Handled in the middleware/ folder.
+- Database: Models stored in models/ for clear data handling.
+- Logging: Centralized in middleware/logger.js.
+This modular structure supports scalability, easy updates, and clear organization as the project expands.
