@@ -1,0 +1,7 @@
+{
+    "exec": "node",
+    "ext": "js,mjs",
+    "watch": ["."],
+    "ignore": ["node_modules"]
+  }
+  
