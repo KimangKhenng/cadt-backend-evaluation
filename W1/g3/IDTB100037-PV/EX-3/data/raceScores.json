@@ -1,0 +1,1 @@
+[{"participant_id":"participant1","sport_type":"swim","duration":{"_totalSeconds":150}},{"participant_id":"participant1","sport_type":"run","duration":{"_totalSeconds":105}},{"participant_id":"participant2","sport_type":"swim","duration":{"_totalSeconds":195}}]
