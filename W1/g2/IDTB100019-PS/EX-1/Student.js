@@ -1,17 +1,25 @@
-import { promises as fs } from "fs";
-const filePath = "./hello.txt";
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-async function handleFile() {
-    try {
-        // Write to a file (asynchronously)
-        await fs.writeFile(filePath, "Hello, Lyming beginner!");
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-        // Read from a file (synchronously)
-        const content = await fs.readFile(filePath, "utf8");
-        console.log("File Content: ", content);
-    } catch (error) {
-        console.log("Error handling file:", error);
-    }
+const filePath = path.resolve(__dirname, "hello.txt");
+
+// writing to a file safely
+try {
+    fs.writeFileSync(filePath, 'Hello, Someth beginner!', 'utf-8');
+    console.log("File written successfully.");
+} catch (err) {
+    console.error("Error writing file:", err.message);
 }
 
-handleFile();
+// Reading to a file safely
+try {
+    const data = fs.readFileSync(filePath, 'utf-8');
+    console.log("File Content: ", data);
+} catch (err) {
+    console.error("Error reading file:", err.message);
+}
