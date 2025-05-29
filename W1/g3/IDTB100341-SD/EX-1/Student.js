@@ -1,16 +1,10 @@
-import fs from 'fs';
-const filePath = "./hello.txt";
-fs.writeFile(filePath, "Hello, Node.js beginner!", (err) => {
-    if (err) {
-      console.error("Error writing to file:", err);
-      return;
-    }
+import fs from 'fs'
 
-    fs.readFile(filePath, "utf8", (err, content) => {
-      if (err) {
-        console.error("Error reading the file:", err);
-        return;
-      }
-      console.log("File content:", content);
-    });
-  });
+const filePath = "./hello.txt";
+
+// Write to a file (synchronously)
+fs.writeFileSync(filePath, "Hello, Node.js beginner!");
+
+// Read the file (synchronously)
+const content = fs.readFileSync(filePath, "utf8");
+console.log("File content:", content);
