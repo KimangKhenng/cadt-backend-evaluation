@@ -1,0 +1,15 @@
+{
+  "name": "ex-1",
+  "version": "1.0.0",
+  "description": "Exercise 1 - File IO",
+  "main": "Student.js",
+  "type": "module",
+  "scripts": {
+    "start": "node Student.js",
+    "dev": "nodemon Student.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
