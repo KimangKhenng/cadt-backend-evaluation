@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jsdoc": "^4.0.4",
+    "nodemon": "^3.1.10"
+  }
+}
