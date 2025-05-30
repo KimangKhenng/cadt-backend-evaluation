@@ -1,4 +1,3 @@
-
 //  TODO - You need to import Duration to use it
 import { Duration } from './Duration.js';
 
