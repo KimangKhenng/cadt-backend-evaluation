@@ -1,0 +1,17 @@
+Q1 – What error message do you see in the terminal when you access http://localhost:3000? What line of code causes it?
+--> The error is: TypeError: res.endd is not a function. It happens because there’s a typo on the line res.endd(); — it should be res.end();.
+
+Q2 – What is the purpose of res.write() and how is it different from res.end()?
+--> res.write() sends part of the message to the browser. res.end() finishes the message and closes the connection.
+
+Q3 – What do you think will happen if res.end() is not called at all?
+--> The browser keeps loading and never gets a full response, because the server never says “I’m done.”
+
+Q4 – Why do we use http.createServer() instead of just calling a function directly?
+--> Because http.createServer() creates an actual web server that listens for browser requests. A normal function alone can’t do that.
+
+Q5 – How can the server be made more resilient to such errors during development?
+--> Fix typos using tools like ESLint.
+    - Add error handling with try...catch.
+    - Use frameworks like Express for easier coding.
+    - Test your code to catch mistakes early.
