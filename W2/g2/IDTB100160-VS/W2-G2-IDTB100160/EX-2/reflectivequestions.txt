@@ -1,0 +1,17 @@
+1. What happens when you visit a URL that doesn’t match any of the three defined? 
+=> When we visit a URL that doesn’t match any of the three defined, it will return '404 Not Found' to client.
+
+2. Why do we check both the req.url and req.method? 
+=> Because we want server to handle requests correctly and sesurely. 
+
+3. What MIME type (Content-Type) do you set when returning HTML instead of plain text?
+=> When returning HTML insteand of plain text, i set MIME type to { 'Content-Type': 'text/html' }.
+
+4. How might this routing logic become harder to manage as routes grow? 
+=> Using If-else or Switch for routing logic might become harder to manage such as:
+- Messy and hard to read
+- diffcult to maintain
+5. What benefits might a framework offer to simplify this logic?
+- Easy to read
+- Cleaner routing 
+- Build in error handling
