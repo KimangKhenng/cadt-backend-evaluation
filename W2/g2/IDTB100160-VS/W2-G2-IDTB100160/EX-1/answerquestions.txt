@@ -1,0 +1,31 @@
+Q1 – What error message do you see in the terminal when you access http://localhost:3000? What line of code causes it? 
+=> I saw this message:
+TypeError: res.endd is not a function
+    at Server.<anonymous> (D:\YEAR2\T3\Backend Development\Lab\S2-PRACTICE-Native-HTTP-1\StartCode\EX-1\server.js:4:16)
+    at Server.emit (node:events:524:28)
+    at parserOnIncoming (node:_http_server:1153:12)
+    at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+
+Node.js v22.12.0
++ The line of code cause it is line 4 and the error is TypeError. We have to write res.end not res.endd.
+
+Q2 – What is the purpose of res.write() and how is it different from res.end()? 
+=> The purpose of res.write() is to send a chunk of the response body to the client.
+It can be called multiple times to send multiple parts of the response.
+=> On the other hand, res.end() is used to signal that the response is complete. 
+It can optionally include the final chunk of data.
++ Key Difference:
+    - res.write() sends data without closing the connection.
+    - res.end() sends data and closes the connection.
+
+Q3 – What do you think will happen if res.end() is not called at all? 
+=> If res.end() is not called at all, the respone will not complete and it will wait until time out.
+
+Q4 – Why do we use http.createServer() instead of just calling a function directly? 
+=> We use http.createServer() in Node.js to create an HTTP server that listens for and handles incoming HTTP requests from clients (like browsers).
+This function takes a callback (usually (req, res) => {}) that is automatically triggered whenever a request is received.
+=> If we just call a function directly, it won’t create a server or handle any HTTP traffic.
+The purpose of http.createServer() is to set up the server and wire it to the network, so it knows how to respond to requests over HTTP.
+
+Q5 – How can the server be made more resilient to such errors during development?
+The server can be made more resilient to such errors during development becuase we can use handle unexpected failures gracefully and improve debugging. 
