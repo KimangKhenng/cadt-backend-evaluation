@@ -1,0 +1,17 @@
+[
+  {
+    "participant_id": "participant1",
+    "sportType": "swim",
+    "raceTime": "2m 30s"
+  },
+  {
+    "participant_id": "participant1",
+    "sportType": "run",
+    "raceTime": "1m 45s"
+  },
+  {
+    "participant_id": "participant2",
+    "sportType": "swim",
+    "raceTime": "3m 15s"
+  }
+]
