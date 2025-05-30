@@ -1,0 +1,19 @@
+When I run nodemon ./Student.js and then make changes to the code 
+(like modifying the text in writeFileSync) and save the file, here's what happens:
+
+Nodemon detects the change immediately and shows a message like:
+[nodemon] restarting due to changes...
+
+It automatically restarts the program, so I don’t have to stop and run it again manually.
+
+The updated code runs, so if I changed the text in hello.txt, the new version gets written and printed in the terminal.
+
+If there’s an error (like a typo), Nodemon shows it right away, so I can fix it and save again.
+
+What I noticed:
+
+The terminal updates super fast after I save.
+
+The hello.txt file gets overwritten every time (because writeFileSync runs again).
+
+It’s way easier than running node ./Student.js over and over!

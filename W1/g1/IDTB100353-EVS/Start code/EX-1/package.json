@@ -1,0 +1,13 @@
+{
+  "name": "ex-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Student.js",
+  "type": "module",
+  "scripts": {
+    "start": "node Student.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
