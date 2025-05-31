@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+/package-lock.json
+/yarn.lock
+
+# Testing
+coverage/
+test-reports
+
+# Production
+dist/
+build/
+
+# Editor and IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# System files
+.DS_Store
+Thumbs.db
