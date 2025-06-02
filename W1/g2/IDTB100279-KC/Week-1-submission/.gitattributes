@@ -1,0 +1,30 @@
+# Auto normalize all text files (like .js, .json, .env)
+* text=auto
+
+# Treat JavaScript files as text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+
+# Treat JSON files as text
+*.json text
+
+# Treat environment files as text
+*.env text
+
+# Treat Markdown files as text
+*.md text
+
+# Treat images as binary (don't try to diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+
+# Node.js typical folders
+node_modules/** binary
+build/** binary
+dist/** binary
+logs/** binary
