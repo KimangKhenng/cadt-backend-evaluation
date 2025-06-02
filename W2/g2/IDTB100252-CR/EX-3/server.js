@@ -2,6 +2,7 @@
 const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
+
 const server = http.createServer((req, res) => {
     const url = req.url;
     const method = req.method;
@@ -27,28 +28,26 @@ const server = http.createServer((req, res) => {
     if (url === '/contact' && method === 'POST') {
         // Implement form submission handling
         let body = '';
-
         req.on('data', chunk => {
             body += chunk.toString(); // Convert the chunk to a string
         });
-        // When all data is received
         req.on('end', ()=>{
-            const parsedData = querystring.parse(body);
+            const parsedData = new querystring.parse(body);
             const name = parsedData.name;
-            console.log('Received name' , name);
-
-            //write to file
+            console.log('Recieved name', name);
             fs.appendFile('submissions.txt', name + '\n', (err)=>{
                 if(err){
-                    console.error('Error writing to file', err);
-                    res.writeHead(500, { 'Content-Type': 'text/plain' });
+                    console.error('Error writng to file', err);
+                    res.writeHead(500, { 'Content-type' : 'text/plain'});
                     return res.end('Internal Server Error');
                 }
                 res.writeHead(200, { 'Content-Type': 'text/html' });
                 res.end(`<h1>Thank you ${name} for your submission</h1>`);
+
             });
         });
     }
+
     else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         return res.end('404 Not Found');
