@@ -1,0 +1,16 @@
+Q1. If I visit a URL that’s not listed in the switch statement (like /blog), 
+the server sends back a 404 Not Found response because it falls into the default case in the switch.
+
+Q2. We check both because different URLs can trigger different responses,
+and even the same URL can behave differently depending on the method (e.g., GET vs POST). 
+This helps us control exactly how the server responds based on the request details.
+
+Q3.  What MIME type (Content-Type) do you set when returning HTML instead of plain text?
+When returning HTML, I set the content type to text/html, like this:
+res.writeHead(200, { 'Content-Type': 'text/html' });
+
+Q4. As the number of routes increases, the switch statement gets longer and harder to maintain. 
+It can become messy and error-prone, especially if we need to handle more methods or dynamic URLs.
+
+Q5. A framework like Express.js helps by letting us define routes more cleanly (e.g., app.get('/about', ...))
+and handles things like routing, method checking, and content type more easily. It also supports middleware and cleaner separation of code.

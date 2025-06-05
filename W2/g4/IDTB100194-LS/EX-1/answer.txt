@@ -1,0 +1,26 @@
+Q1. When I open http://localhost:3000 in the browser, I see this message:
+
+Hmmm… can't reach this page
+localhost refused to connect.
+Try:
+
+Searching the web for localhost
+
+Checking the connection
+
+Checking the proxy and the firewall
+ERR_CONNECTION_REFUSED
+
+This happens because the server has a bug and crashes before it can respond. The issue is in this line:
+return res.endd();
+The method res.endd() is incorrect (it's a typo). It should be res.end(). Because of the typo, the server throws an error and refuses the connection.
+
+Q2. res.write() sends some data to the browser but keeps the connection open.
+res.end() finishes the response and closes the connection.
+
+Q3. The browser will keep waiting, and the page won’t load because the response is not finished.
+
+Q4. Because http.createServer() creates a real server that can listen and respond to HTTP requests.
+
+Q5. We can use try-catch for errors, check our code carefully, and use tools like linters or TypeScript to catch mistakes.
+
