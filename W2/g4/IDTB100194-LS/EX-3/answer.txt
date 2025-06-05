@@ -1,0 +1,23 @@
+Q1. Because when a user submits a form with a POST request, the data doesn’t arrive all at once.
+It comes in small pieces (chunks). We use the data event to collect those pieces, and end tells us when it's all received so we can process it.
+
+Q2. If we don’t collect the chunks properly, the full form data might not be captured. 
+That means the name field could be incomplete, missing, or even crash the app if we try to use it without checking.
+
+Q3. When using a basic HTML form, the browser sends data as application/x-www-form-urlencoded. 
+It looks like a query string: name=John+Doe, where spaces become + and symbols are encoded.
+
+Q4.We use appendFile because we want to add each new name to the file without deleting what’s already there. 
+writeFile would overwrite the file every time, so we’d lose all the old submissions.
+
+Q5.We should:
+
+- Check that the name field isn’t empty.
+
+- Clean the input to prevent script injections.
+
+- Use HTTPS to protect data while it's being sent.
+
+- Limit how often people can submit (to stop spam).
+
+- Store data in JSON if we plan to expand later.
