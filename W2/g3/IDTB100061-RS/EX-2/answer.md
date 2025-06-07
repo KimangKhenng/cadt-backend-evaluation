@@ -1,0 +1,9 @@
+2.EX-2 
+Reflective Questions  
+1. What happens when you visit a URL that doesn’t match any of the three defined?  - The server returns a 404 status code with the message "404 Not Found" - This is handled by the default case in the switch statement - The Content-Type is set to 'text/plain' 
+2. Why do we check both the req.url and req.method?  - URL checking ensures we're handling the correct route path - Method checking ensures we're handling the correct HTTP method (GET, POST, etc.) - This combination provides proper REST API routing - It prevents unauthorized methods from accessing endpoints - It's a security best practice to explicitly define allowed methods 
+3. What MIME type (Content-Type) do you set when returning HTML instead of plain text?  - For HTML: 'text/html' - For plain text: 'text/plain' - The MIME type tells the browser how to interpret and render the response content 
+- Wrong MIME types can cause browsers to misinterpret the content 
+4. How might this routing logic become harder to manage as routes grow?  - The switch statement can become very long and hard to read - Adding new routes requires modifying the main server file - Error handling and middleware become difficult to implement - Route parameters and query string handling become complex - Code organization becomes challenging - Testing individual routes becomes more difficult 
+5. What benefits might a framework offer to simplify this logic? 
+Frameworks like Express.js provide: - Modular routing with Router objects - Middleware support for code reuse - Built-in parsing for request bodies, cookies, and sessions - Better error handling mechanisms - Route parameters and query string parsing - Static file serving - Template engine integration - Security features - Better code organization through middleware and routing modules
