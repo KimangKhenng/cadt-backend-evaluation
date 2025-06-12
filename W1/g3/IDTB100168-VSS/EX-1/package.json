@@ -1,0 +1,6 @@
+ {
+  "start": "node Student.js",
+  "start-async": "node StudentAsync.js",
+  "dev": "nodemon Student.js",
+  "dev-async": "nodemon StudentAsync.js"
+}

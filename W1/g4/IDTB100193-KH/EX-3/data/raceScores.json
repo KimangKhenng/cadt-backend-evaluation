@@ -1,0 +1,23 @@
+[
+  {
+    "_participantId": "participant1",
+    "_sportType": "swim",
+    "_duration": {
+      "_totalSeconds": 150
+    }
+  },
+  {
+    "_participantId": "participant1",
+    "_sportType": "run",
+    "_duration": {
+      "_totalSeconds": 105
+    }
+  },
+  {
+    "_participantId": "participant2",
+    "_sportType": "swim",
+    "_duration": {
+      "_totalSeconds": 195
+    }
+  }
+]
