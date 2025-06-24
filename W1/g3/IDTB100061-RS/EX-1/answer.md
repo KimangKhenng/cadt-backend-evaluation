@@ -1,0 +1,2 @@
+what happen when u change and save your code  now ?
++ nodemon automatically restart the app . you dont' need to manually run the file again - it keeps watching for change and rerun the program for you . this is very helpfull for development.
