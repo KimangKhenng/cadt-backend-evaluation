@@ -1,0 +1,34 @@
+1. How do sub-resource routes (e.g., /journalists/:id/articles) imporve the organization and clarity of your API?
+Sub-resource routes help organize your API by clearly showing relationships between different resources. For example, 
+/journalists/:id/articles makes it easy to understand that we are requesting articles written by a specific journalist. 
+This structure improves readability, keeps the API organized, and makes it easier for developers to know how to access related data.
+
+2. What are the pros and cons of using in-memory dummy data instead of a real database during development?
+Pros:
+- Easy to set up and use.
+- No need to install or configure a database.
+- Helpful for quick testing and learning.
+Cons:
+- Data is not saved when the server restarts.
+- Not suitable for real projects or large data.
+- Cannot test database features like queries, relationships, or data validation.
+
+3. How would you modify the current structure if you needed to add user authentication for fournalist to manage only their own articles?
+To add authentication:
+- Add a login and signup system using tools like JWT (JSON Web Token).
+- Protect certain routes using authentication middleware.
+- When a journalist logs in, include their ID in the token.
+- When they create or update an article, check the token to allow actions only on their own articles.
+This ensures that journalists can only manage the articles they have written.
+
+4. What challenges did you face when linking related resources (e.g., matching journalistId in articles), and how did you resolve them?
+The main challenge was making sure each article had a valid journalistId that matched a real journalist. If the ID did not match, 
+the article would be incorrect. To fix this, I added a check to confirm that the journalist exists before saving the article. 
+I also filtered articles correctly when using routes like /journalists/:id/articles.
+
+5. If your API were connected to a front-end application, how would RESTful design help the frontend developer understand how to interact with your API?
+A RESTful API is easy for frontend developers to use because:
+- Routes follow a clear pattern, like /articles, /articles/:id, or /journalists/:id/articles.
+- Developers know what to expect when using standard HTTP methods like GET, POST, PUT, and DELETE.
+- It helps build a smooth connection between the frontend and backend.
+- REST makes the API easier to understand, even without full documentation.

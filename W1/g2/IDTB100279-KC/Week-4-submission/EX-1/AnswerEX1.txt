@@ -1,0 +1,11 @@
+Q1: What challenges did you face when using the native http module that Express.js helped you solve?
+During I used native http module it take many line of code to get the module and url from request but
+when I use express.js I use only app.get(....) and I can do code shorter and easier to look than before.
+
+Q2: How does Express simplify route handling compared to the native HTTP server?
+For Express it simplifies route by using (app.get('/route' .....)) to get route but native HTTP it uses 
+if (url === '/route' && method === 'GET') to get .
+
+Q3: What does middleware mean in Express, and how would you replicate similar behavior using the native module?
+In Express middleware means like function or method that access to the req, res and next object in the application's request-respone cycle. 
+To replicate similar behavior using the native module we would create function that process requests before they reach the main route handler.

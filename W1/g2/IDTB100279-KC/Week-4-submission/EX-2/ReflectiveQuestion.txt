@@ -1,0 +1,62 @@
+
+Middleware & Architecture 
+1. What are the advantages of using middleware in an Express application? 
+=>  - Middleware allows you to handle common tasks (like logging, validation, authentication) separately from your route handlers.
+    - It keeps the code modular and reusable.
+    - Makes it easier to add features like error handling or logging without cluttering the route logic.
+
+2. How does separating middleware into dedicated files improve the maintainability of 
+your code? 
+=>  - By isolating middleware functions, it’s easier to manage and update them without affecting route handlers.
+    - Each middleware can be tested and modified independently, improving code clarity and reusability.
+
+3. If you had to scale this API to support user roles (e.g., admin vs student), how would you 
+modify the middleware structure? 
+=>  - You can add role-based authentication middleware that checks the user's role (admin, student, etc.).
+    - Use middleware to restrict access to certain routes based on the user’s role.
+ 
+Query Handling & Filtering 
+4. How would you handle cases where multiple query parameters conflict or are 
+ambiguous (e.g., minCredits=4 and maxCredits=3)? 
+=>  - If minCredits=4 and maxCredits=3, return a 400 Bad Request with a clear error message.
+    - Example: "minCredits cannot be greater than maxCredits."
+    - Always validate and sanitize inputs to avoid conflicts.
+
+5. What would be a good strategy to make the course filtering more user-friendly (e.g., 
+handling typos in query parameters like “falll” or “dr. smtih”)? 
+=>  - Implement fuzzy matching or basic typo correction for common query parameters (like "fall" for "fall semester").
+    - Use a library like fuzzy or string-similarity to improve matches.
+    - Provide helpful error messages if parameters are misspelled.
+ 
+Security & Validation 
+6. What are the limitations of using a query parameter for authentication 
+(e.g., ?token=xyz123)? What alternatives would be more secure? 
+=>  - Query parameters can be exposed in URLs, making them vulnerable to interception.
+    - A more secure alternative is using Bearer tokens sent in the Authorization header.
+
+7. Why is it important to validate and sanitize query inputs before using them in your 
+backend logic? 
+=>  - Invalid or malicious input can lead to SQL Injection, XSS attacks, or unexpected behaviors.
+    - Validating ensures inputs are safe and expected, while sanitizing prevents malicious content from being executed.
+ 
+Abstraction & Reusability 
+8. Can any of the middleware you wrote be reused in other projects? If so, how would you 
+package and document it? 
+=>  - Yes, middleware like logging, query validation, and authentication can be reused in other projects.
+    - To reuse, package them as npm modules or store them in a shared repository, along with clear documentation and examples for usage.
+
+9. How could you design your route and middleware system to support future filters (e.g., 
+course format, time slot)? 
+=>  - Make the filtering logic modular and dynamic, so new filters can easily be added.
+    - Create a generic middleware to handle new query parameters, and update route logic to check for new filters.
+ 
+ Bonus – Real-World Thinking 
+10. How would this API behave under high traffic? What improvements would you need to 
+make for production readiness (e.g., rate limiting, caching)? 
+=>  - Under high traffic, the API might become slow or unresponsive due to heavy database queries.
+    - Improvements:
+        - Rate Limiting: Prevent abuse by limiting the number of requests from a single client.
+        - Caching: Store frequently accessed data in memory (e.g., with Redis) to reduce database load.
+        - Load Balancing: Distribute requests across multiple servers to handle more traffic.
+        - Error Handling: Ensure proper error responses to prevent crashes and improve reliability.
+ 
