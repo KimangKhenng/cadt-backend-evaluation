@@ -1,0 +1,14 @@
+[
+  {
+    "participantId": "participant1",
+    "sportType": "swim"
+  },
+  {
+    "participantId": "participant1",
+    "sportType": "run"
+  },
+  {
+    "participantId": "participant2",
+    "sportType": "swim"
+  }
+]
