@@ -1,0 +1,24 @@
+Q1: What error message do you see in the terminal when you access http://localhost:3000? what line of code causes it?
+TypeError: res.endd is not a function
+it is in line 6.
+it errors with word end (endd).
+
+Q2: What is the purpose of res.write() and how is it different from res.end()?
+For res.write(), we use it to display the respond to clients when they requst successful.
+but for res.end(), it means that it already respond to clients.
+
+Q3: What do you think will happen if res.end() is not called at all?
+if it is not called at all, I think the server can not know that it already respond or not.
+
+Q4: Why do we use http.createServer() instead of just calling a function directly?
+We use http.createServer() to create a real HTTP server that can listen for and respond to incoming web requests. 
+Just calling a function won’t handle HTTP protocols, connections, or provide request/response objects.
+
+Q5:How can the server be made more resilient to such errors during development?
+To make the server more resilient during development:
+- Use try-catch to handle errors.
+- Catch uncaughtException and unhandledRejection.
+- Use tools like nodemon to auto-restart on crash.
+- Validate user input.
+- Log errors for easier debugging.
+

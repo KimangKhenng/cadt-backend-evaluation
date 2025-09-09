@@ -1,0 +1,22 @@
+Q1: What happens when you visit a URL that doesn't match any of the three defined?
+It will respond the 404 Not Found error.
+
+Q2: Why do we check both the req.url and req.method?
+we check it to sure about the requested URL path and HTTP method.
+
+Q3: Why MIME type (content-Type) do you set when returning HTML instead of plain text?
+I set it to HTML because depend on user interface it is look well than only text and HTML we are easy to design the interface.
+
+Q4: How might this routing logic become harder to manage as routes grow?
+As routes grow, this routing logic becomes harder to manage because:
+- It gets long and messy, making code harder to read.
+- Adding new routes increases the chance of errors or duplicates.
+- It's harder to reuse or organize logic across different routes.
+- There's no separation of concerns, mixing routing and response logic.
+
+Q5: What benefits might a framework offer to simplify this logic?
+A framework like Express.js offers several benefits to simplify routing logic:
+- Cleaner syntax for defining routes (e.g., app.get('/about', ...)).
+- Built-in middleware for parsing requests and handling errors.
+- Better organization with route separation and modular files.
+- Easier scaling as your app grows.

@@ -1,0 +1,18 @@
+Q1: Why do we listen for data and end events when handling POST?
+Because POST data arrives in chunks. we collect it using data and process it once complete with end.
+
+Q2: What would happen if we didn't buffer the body correctly?
+we would get incomplete or corrupted data, since only part of the body may be received before processing.
+
+Q3: What is the format of form submissions when using the default browser form POST?
+it is typically sent as application/x-www-form-urlencoded, unless specitied otherwise.
+
+Q4: Why do we use fs.appendFile instead of fs.WriteFile?
+fs.appendFile adds new data without overwriting existing content
+fs.writeFile replaces the file
+
+Q5: How could this be improved or made more secure?
+- Sanitize input to prevent code injection.
+- Use HTTPS for secure data transfer.
+- Limit input size to avoid abuse.
+- Use frameworks like Express for built-in security and validation.
